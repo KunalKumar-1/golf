@@ -1,86 +1,204 @@
-*{
-    margin:0%;
-    padding: 0%;
-    box-sizing: border-box;
-    font-family: 'montserrat';
-    color: #fff;
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: "montserrat";
+  color: #fff;
 }
- html,body{
-    height: 100%;
-    width: 100%;
- }
- #nav{
-    height: 145px;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.33);
-    display: flex;
-    align-items: center;
-    padding: 0 150px;
-    gap: 50px;
-    position:fixed;
-    justify-content:flex-start;
-    z-index: 99;
+html,
+body {
+  height: 100%;
+  width: 100%;
 }
-#nav img{
-    height: 75px;
+#cursor {
+  height: 22px;
+  width: 22px;
+  background-color: #95c11e;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 99;
+}
+#cursor-blur {
+  height: 500px;
+  width: 500px;
+  background-color: #96c11e61;
+  border-radius: 50%;
+  position: fixed;
+  filter: blur(40px);
+  z-index: 9;
+}
+#nav {
+  height: 145px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 150px;
+  gap: 50px;
+  position: fixed;
+  justify-content: flex-start;
+  z-index: 99;
+}
+#nav img {
+  height: 75px;
+}
+#nav h4 {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-weight: 500;
+}
+video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: fixed;
+  z-index: -1;
+}
+#main {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.374);
+}
+#page1 {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  z-index: 10;
+}
+#page1 h1 {
+  font-size: 140px;
+  font-weight: 940;
+  position: relative;
+}
+#page1 h1::before {
+  content: "EAT.DRINK.PLAY.";
+  position: absolute;
+  color: black;
+  top: -3.66px;
+  left: -5.14px;
+  -webkit-text-stroke: 2px #95c11e;
+  z-index: -1;
+}
 
+#page1 h2 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 40px;
+  font-weight: 800;
 }
-#nav h4{
-    text-transform:uppercase;
-    font-weight: 500;
-    font-weight: 500;
+#page1 p {
+  font-size: 17px;
+  font-weight: 440;
+  width: 40%;
 }
-video{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    position: fixed;
-    z-index: -1;
+#page2 {
+  min-height: 100vh;
+  width: 100%;
+  z-index: 10;
 }
-#main{
+
+#scroller {
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  z-index: 10;
+}
+#scroller::-webkit-scrollbar {
+  display: none;
+}
+#scroller-in {
+  display: inline-block;
+  white-space: nowrap;
+  animation-name: scroll;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+#scroller h4 {
+  display: inline-block;
+  font-size: 120px;
+  font-weight: 900;
+  font-family: gilroy;
+  margin-right: 10px;
+  color: transparent;
+  transition: all linear 0.5s;
+  -webkit-text-stroke: 2px #95c11e;
+}
+#scroller h4:hover {
+  color: #95c11e;
+}
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+#about-us {
+  height: 40vh;
+  width: 100%;
+  /*background-color: red;*/
+  display: flex;
+  /*padding:0 50px;*/
+  align-items: center;
+  position: relative;
+  justify-content: space-around;
+}
+#about-us img {
+  height: 220px;
+  width: 220px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+#about-us-in {
+  width: 50%;
+  text-align: center;
+}
+#about-us-in h3 {
+  font-size: 56px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  line-height: 1.33;
+  margin-bottom: 30px;
+}
+#about-us-in {
+  font-size: 25px;
+  line-height: 26px;
+  justify-content: space-between;
+  line-height: 1.6;
+  font-weight: 200;
+  letter-spacing: 1.5px;
+}
+
+#cards-container{
+/*background-color: red;*/
 position: relative;
-background-color: rgba(0, 0, 0, 0.374);
-
-
+height: 60vh;
+display: flex;
+align-items: center;
+justify-content: center;
+gap:70px;
+z-index: 10;
 }
-#page1{
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+.card{
+    height: 80%;
+    width: 24%;
+   /* background-color: blue;*/
+    border-radius: 10px;
+    background-size:cover;
+ }
+#card1{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer.jpg?strip=all&lossy=1&sharp=1&ssl=1);
 }
-#page1 h1{
-    font-size: 140px;
-    font-weight: 940;
-    position: relative;
+#card2{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4.jpg?strip=all&lossy=1&sharp=1&ssl=1);
 }
-#page1 h1::before{
-    content: "EAT.DRINK.PLAY.";
-    position: absolute;
-    color: black;
-    top:-5px;
-    left:-5.5px;
-    -webkit-text-stroke: 2px  #95C11E;
-    z-index: -1;
+#card3{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
 }
-
-#page1 h2{
-    margin-top: 10px;
-    margin-bottom: 20px;
-    font-size: 40px;
-    font-weight: 800;
-}
-#page1 p{
-  
-    font-size: 17px;
-    font-weight: 440;
-    width: 40%;
-    
-    
-}
-
-
